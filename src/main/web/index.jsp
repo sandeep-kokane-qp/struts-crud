@@ -2,7 +2,7 @@
 <head>
     <title>Struts CRUD</title>
 </head>
-<body>
+<body align="center">
 <h1>Welcome to CRUD using Struts</h1>
 <a href="insert.do">Insert</a> || <a href="read.do">Read</a>
 </body>

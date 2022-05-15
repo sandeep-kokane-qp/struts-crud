@@ -36,5 +36,9 @@
         </tbody>
     </table>
 </html:form>
+
+<div align="center">
+    <a href="./">Home</a>
+</div>
 </body>
 </html>

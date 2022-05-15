@@ -103,6 +103,21 @@ public class UserDAO {
     public static int update(User user) {
         System.out.println("UserDAO.update");
 
+        try {
+            PreparedStatement preparedStatement = getConnection().prepareStatement("UPDATE User SET firstName=?, lastName=?,email=?,city=? WHERE id=?");
+            preparedStatement.setString(5, user.getId());
+            preparedStatement.setString(1, user.getFirstName());
+            preparedStatement.setString(2, user.getLastName());
+            preparedStatement.setString(3, user.getEmail());
+            preparedStatement.setString(4, user.getCity());
+
+            int update = preparedStatement.executeUpdate();
+            System.out.println(update);
+            return update;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return 0;
     }
 

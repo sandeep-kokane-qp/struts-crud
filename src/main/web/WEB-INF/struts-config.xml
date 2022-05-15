@@ -24,8 +24,11 @@
         <action path="/read" type="com.proj.action.ReadAction">
             <forward name="success" path="/read.jsp"/>
         </action>
-        <action path="/update" type="com.proj.action.UpdateAction">
+        <action path="/update" type="com.proj.action.UpdateAction" >
             <forward name="success" path="/WEB-INF/update.jsp"/>
+        </action>
+        <action path="/user" type="com.proj.action.UserUpdateAction" name="UserForm" >
+            <forward name="success" path="/WEB-INF/success.jsp"/>
         </action>
         <action path="/delete" type="com.proj.action.DeleteAction">
             <forward name="success" path="/WEB-INF/delete.jsp"/>

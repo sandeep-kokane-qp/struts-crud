@@ -34,5 +34,9 @@
     </logic:iterate>
     </tbody>
 </table>
+
+<div align="center">
+    <a href="./">Home</a> || <a href="insert.do">Insert</a>
+</div>
 </body>
 </html>
