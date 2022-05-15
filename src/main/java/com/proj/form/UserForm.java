@@ -37,4 +37,9 @@ public class UserForm extends ActionForm {
 
         return actionErrors;
     }
+
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        super.reset(mapping, request);
+    }
 }

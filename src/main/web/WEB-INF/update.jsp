@@ -5,13 +5,13 @@
 <head>
     <title>Struts : Update</title>
 </head>
-<body>
+<body align="center">
 <h1>Update</h1>
 <%
     User user = (User) request.getAttribute("user");
 %>
-<html:form action="/register" focus="firstName">
-    <table>
+<html:form action="/user">
+    <table align="center">
         <tbody>
         <html:hidden property="id" value="<%=user.getId()%>"/>
         <tr>
@@ -35,12 +35,16 @@
             <td><html:errors property="city_e"/></td>
         </tr>
         <tr>
+            <td></td>
             <td><html:submit value="Update"/></td>
-            <td><html:reset value="Reset"/></td>
         </tr>
         </tbody>
     </table>
 </html:form>
+
+<div align="center">
+    <a href="read.do">Back</a>
+</div>
 
 </body>
 </html>
