@@ -13,24 +13,35 @@
         <forward name="success" path="/"/>
     </global-forwards>
     <action-mappings>
-        <action path="/insert" type="com.proj.action.InsertAction">
+        <action path="/insert"
+                type="com.proj.action.InsertAction">
             <forward name="success" path="/insert.jsp"/>
         </action>
-        <action path="/register" type="com.proj.action.RegisterAction" name="UserForm" validate="true"
+        <action path="/register"
+                type="com.proj.action.RegisterAction"
+                name="UserForm"
+                validate="true"
+                scope="request"
                 input="/insert.jsp">
             <forward name="success" path="/WEB-INF/success.jsp"/>
             <forward name="failure" path="/WEB-INF/failure.jsp"/>
         </action>
-        <action path="/read" type="com.proj.action.ReadAction">
+        <action path="/read"
+                type="com.proj.action.ReadAction">
             <forward name="success" path="/read.jsp"/>
         </action>
-        <action path="/update" type="com.proj.action.UpdateAction" >
+        <action path="/update"
+                type="com.proj.action.UpdateAction">
             <forward name="success" path="/WEB-INF/update.jsp"/>
         </action>
-        <action path="/user" type="com.proj.action.UserUpdateAction" name="UserForm" >
+        <action path="/user"
+                type="com.proj.action.UserUpdateAction"
+                name="UserForm"
+                input="/WEB-INF/update.jsp">
             <forward name="success" path="/WEB-INF/success.jsp"/>
         </action>
-        <action path="/delete" type="com.proj.action.DeleteAction">
+        <action path="/delete"
+                type="com.proj.action.DeleteAction">
             <forward name="success" path="/WEB-INF/delete.jsp"/>
         </action>
 

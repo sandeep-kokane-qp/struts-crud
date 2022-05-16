@@ -5,7 +5,7 @@
     <title>Struts : Insert</title>
 </head>
 <body>
-<h1 align="center">Insert using Struts Tags</h1>
+<h1 align="center">Insert into DB</h1>
 <html:form action="/register" focus="firstName">
     <table align="center">
         <tbody>
@@ -38,7 +38,7 @@
 </html:form>
 
 <div align="center">
-    <a href="./">Home</a>
+    <a href="./">Home</a> || <a href="read.do">All Users</a>
 </div>
 </body>
 </html>

@@ -15,9 +15,7 @@ public class UpdateAction extends Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("UpdateAction.execute");
         String id = request.getParameter("id");
-        System.out.println("id:: " + id);
         User userById = UserDAO.getUserById(id);
-        System.out.println(userById);
         request.setAttribute("user", userById);
 
         return mapping.findForward("success");
