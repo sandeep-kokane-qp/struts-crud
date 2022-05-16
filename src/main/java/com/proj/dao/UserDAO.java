@@ -39,8 +39,7 @@ public class UserDAO {
             preparedStatement.setString(4, user.getEmail());
             preparedStatement.setString(5, user.getCity());
 
-            int update = preparedStatement.executeUpdate();
-            return update;
+            return preparedStatement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
