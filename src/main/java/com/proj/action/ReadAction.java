@@ -15,9 +15,8 @@ public class ReadAction extends Action {
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("ReadAction.execute");
-        UserDAO userDAO = new UserDAO();
 
-        List<User> userList = userDAO.readAllUsers();
+        List<User> userList = UserDAO.readAllUsers();
         System.out.println("List of users::");
         userList.forEach(System.out::println);
         request.setAttribute("userList", userList);

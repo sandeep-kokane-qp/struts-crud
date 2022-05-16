@@ -22,8 +22,7 @@ public class RegisterAction extends Action {
         user.setEmail(userForm.getEmail());
         user.setCity(userForm.getCity());
 
-        UserDAO userDAO = new UserDAO();
-        int insert = userDAO.insert(user);
+        int insert = UserDAO.insert(user);
         if (insert > 0) {
             request.setAttribute("res", "Inserted into DB");
             return mapping.findForward("success");
