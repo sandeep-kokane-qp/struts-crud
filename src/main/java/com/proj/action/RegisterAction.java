@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 public class RegisterAction extends Action {
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println("RegisterAction.execute");
         UserForm userForm = (UserForm) form;
         User user = new User();
-        System.out.println(user);
         user.setFirstName(userForm.getFirstName());
         user.setLastName(userForm.getLastName());
         user.setEmail(userForm.getEmail());
@@ -24,7 +24,6 @@ public class RegisterAction extends Action {
 
         UserDAO userDAO = new UserDAO();
         int insert = userDAO.insert(user);
-        System.out.println(insert);
         if (insert > 0) {
             request.setAttribute("res", "Inserted into DB");
             return mapping.findForward("success");

@@ -14,7 +14,6 @@ public class DeleteAction extends Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("DeleteAction.execute");
         String id = request.getParameter("id");
-        System.out.println(id);
         UserDAO.delete(id);
         return mapping.findForward("success");
     }

@@ -13,6 +13,8 @@ public class UserDAO {
     private static final String INSERT_INTO_USER = "INSERT INTO User values (?,?,?,?,?)";
     private static final String MYSQL_DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String DELETE_USER_BY_ID = "DELETE FROM User WHERE id=?";
+    private static final String SELECT_USER_BY_ID = "SELECT * FROM User WHERE id=?";
+    private static final String UPDATE_USER_BY_ID = "UPDATE User SET firstName=?, lastName=?,email=?,city=? WHERE id=?";
 
     private static Connection getConnection() {
         try {
@@ -38,7 +40,6 @@ public class UserDAO {
             preparedStatement.setString(5, user.getCity());
 
             int update = preparedStatement.executeUpdate();
-            System.out.println(update);
             return update;
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,7 +74,7 @@ public class UserDAO {
         System.out.println("UserDAO.getUserById");
         try {
 
-            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT * FROM User WHERE id=?");
+            PreparedStatement preparedStatement = getConnection().prepareStatement(SELECT_USER_BY_ID);
             preparedStatement.setString(1, id);
 
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -104,7 +105,7 @@ public class UserDAO {
         System.out.println("UserDAO.update");
 
         try {
-            PreparedStatement preparedStatement = getConnection().prepareStatement("UPDATE User SET firstName=?, lastName=?,email=?,city=? WHERE id=?");
+            PreparedStatement preparedStatement = getConnection().prepareStatement(UPDATE_USER_BY_ID);
             preparedStatement.setString(5, user.getId());
             preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
